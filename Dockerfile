@@ -7,7 +7,7 @@ RUN apt update && \
     apt install -y gnupg2 nginx-full wget curl openjdk-11-jre apt-transport-https
 
 # On ajoute le dépot contenant Prosody, une dépendance pour Jitsi
-RUN echo deb http://packages.prosody.im/debian $(lsb_release -sc) main | tee -a /etc/apt/sources.list && \
+RUN echo deb http://packages.prosody.im/debian $(cat /etc/os-release | grep VERSION_CODENAME | cut -d"=" -f2) main | tee -a /etc/apt/sources.list && \
     wget https://prosody.im/files/prosody-debian-packages.key -O- | apt-key add -
 
 # On ajoute aussi le dépot contenant Jitsi
@@ -22,6 +22,10 @@ EXPOSE 80
 EXPOSE 443
 EXPOSE 10000
 
+COPY automatic-jitsi-answers /root/
+
+RUN debconf-set-selections /root/automatic-jitsi-answers
+
 RUN apt install -y jitsi-meet
 
-RUN jitsi-meet installation
+#CMD jitsi-meet installation
