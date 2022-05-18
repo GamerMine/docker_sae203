@@ -5,6 +5,8 @@
   Lors de cette Saé, nous avons appris à mettre en place un service réseau à l'aide de Docker pour répondre aux besoins d'un client. Nous nous sommes donc concentrer une application communicante et complexe telle que Jitsi qui permet de réaliser des vidéoconférence. 
 
 ###Docker 
+  
+  Le docker est ... 
 
 ###Vidéo conférence
  
