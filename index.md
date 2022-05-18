@@ -26,7 +26,7 @@ Nous avons choisi Jitsi pour son interface, et car c'est l'une des rares applica
 ### GitHub Pages
 
 Pour ce projet, nous avons aussi dû apprendre à utilisé GitHub Page, une version simplifié de HTML/CSS. 
-![Logo de GitHub](./img/logo_github.png =250x250)
+![Logo de GitHub](./img/logo_github.png)
 
 
 
