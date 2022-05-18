@@ -32,7 +32,7 @@ docker build -t <choisir-un-nom-pour-l'image> .
 docker run -d -p 8080:80 <nom-de-l'image-choisie>
 ```
 
-- Vérifier que l'application est en cours d'exécution. Pour ce faire, ouvrez un navigateur et tapez dans la barre url : ```localhost:8080``
+- Vérifier que l'application est en cours d'exécution. Pour ce faire, ouvrez un navigateur et tapez dans la barre url : ```localhost:8080```
 
 ## Instruction pour éteindre le conteneur
 
