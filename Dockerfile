@@ -17,15 +17,25 @@ RUN echo 'deb [signed-by=/usr/share/keyrings/jitsi-keyring.gpg] https://download
 # On met à jour les dépots
 RUN apt update
 
+# On ajoute des réponses aux divers question posées lors de l'installation du paquet jitsi-meet et de ses dépendances
+COPY automatic-jitsi-answers /root/
+RUN debconf-set-selections /root/automatic-jitsi-answers
+
+# On install jitsi
+RUN apt install -y jitsi-meet
+
+RUN printf "component_interface = '0.0.0.0'\ncomponent_ports = {5347}\nnetwork_backend = 'epoll'" >> /etc/prosody/prosody.cfg.lua
+
 # On expose les ports nécessaires pour l'ensembles des communications avec Jitsi
 EXPOSE 80
 EXPOSE 443
 EXPOSE 10000
 
-COPY automatic-jitsi-answers /root/
+# On copie la configuration NGINX pour le site web
+RUN rm /etc/nginx/sites-enabled/default
+COPY jitsi.conf /etc/nginx/sites-enabled/
+COPY startup.sh /root/
 
-RUN debconf-set-selections /root/automatic-jitsi-answers
+RUN chmod +x /root/startup.sh
 
-RUN apt install -y jitsi-meet
-
-#CMD jitsi-meet installation
+CMD /root/startup.sh
