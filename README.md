@@ -1,8 +1,6 @@
-# 
+# Lancer un serveur web de video conference 
 
-Exemple de **dockerfile + github** pour lancer un serveur web basé sur l'image ```httpd```
-
-## Instructions pour lancer l'application
+## Instructions pour lancer le site web
 
 - Vérifiez si docker est installé :
 ```shell
@@ -21,7 +19,7 @@ git clone git@github.com:GamerMine/docker_sae203.git
 
 - Aller au référentiel :
 ```shell
-cd exempleDockerfile
+cd docker_sae203
 ```
 
 - Construisez l'image décrite dans dockerfile avec docker build : 
