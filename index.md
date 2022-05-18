@@ -27,6 +27,14 @@ Durant nos recherches, nous sommes tombés sur plusieurs applications open sourc
 
 Nous avons choisi Jitsi pour son interface, et car c'est l'une des rares application gratuite, open source et auto hébergé. Nous avons donc décidé de le choisir pour Docker
 
+Voici une représentation de l'interface Jitsi        
+
+
+
+
+
+![Logo de GitHub](./img/img_interface_jitsi.png)             
+
 ### GitHub Pages
 
 Pour ce projet, nous avons aussi dû apprendre à utilisé GitHub Page, une version simplifié de HTML/CSS.      
