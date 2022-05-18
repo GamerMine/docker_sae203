@@ -9,7 +9,8 @@
 ### Docker 
   
   Le docker 
-  ![logo de Docker](./img/logo_docker.png =250x250)
+  ![logo de Docker](./img/logo_docker.png | width = 100)
+  <img src="./img/logo_docker.png" width=50% height=50%>
 
 ### Jitsi
  
