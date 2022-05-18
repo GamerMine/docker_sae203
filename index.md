@@ -8,7 +8,19 @@
 
 ### Docker 
   
-  Le docker     
+  Le docker permet d'éxecuter des applications dans des conteneurs
+  
+  #### 1. Architecture 
+  
+  -> Serveur ( demon docker ) : Il peut créer et gérer des images de docker
+  -> API de Repos : Il indique au demon docker ce qu'il doit faire 
+  -> Interface de ligne de commande ( CLI ) : C'est un client qui sert à entrer des commandes pour le docker
+  
+  #### 2. Conteneurs
+  
+  #### 3. Dockerfile
+  
+  #### 4. Volumes
 
 
 
