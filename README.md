@@ -32,7 +32,7 @@ docker build -t <choisir-un-nom-pour-l'image> .
 docker run -d -p 443:443 <nom-de-l'image-choisie>
 ```
 
-- Vérifier que l'application est en cours d'exécution. Pour ce faire, ouvrez un navigateur et tapez dans la barre url : ```127.0.0.1:443```
+- Vérifier que l'application est en cours d'exécution. Pour ce faire, ouvrez un navigateur et tapez dans la barre url : ```https://127.0.0.1:443```
 
 ## Instruction pour vérifier l´existence du conteneur et de l´image
 
