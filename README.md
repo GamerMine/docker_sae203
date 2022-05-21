@@ -22,6 +22,13 @@ git clone git@github.com:GamerMine/docker_sae203.git
 cd docker_sae203
 ```
 
+- Modifiez le champs <votre-ip> dans le fichier automatic-jitsi-answers, exemple :
+ ```
+ Remplacement de <votre-ip> par "127.0.0.1"
+ Remplacement de <votre-ip> par "192.168.1.17"
+ ```
+ ATTENTION : Les guillemets sont très importants !
+
 - Construisez l'image décrite dans Dockerfile avec docker build : 
 ```shell
 docker build -t <choisir-un-nom-pour-l'image> .
@@ -32,7 +39,7 @@ docker build -t <choisir-un-nom-pour-l'image> .
 docker run -d -p 443:443 <nom-de-l'image-choisie>
 ```
 
-- Vérifier que l'application est en cours d'exécution. Pour ce faire, ouvrez un navigateur et tapez dans la barre url : ```https://127.0.0.1:443```
+- Vérifier que l'application est en cours d'exécution. Pour ce faire, ouvrez un navigateur et tapez dans la barre url : ```https://<votre-ip>:443```
 
 ## Instruction pour vérifier l´existence du conteneur et de l´image
 
