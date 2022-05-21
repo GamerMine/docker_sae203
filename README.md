@@ -1,6 +1,6 @@
 # Lancer un serveur web de video conference 
 
-## Instructions pour lancer le site web
+## Instructions pour lancer le serveur Jitsi Meet
 
 - Vérifiez si docker est installé :
 ```shell
@@ -12,27 +12,27 @@ docker --version
 cd ./<chemin-pour-le-referentiel>
 ```
 
-- Cloner le référentiel :
+- Cloner le dépot :
  ```shell
 git clone git@github.com:GamerMine/docker_sae203.git
 ```
 
-- Accéder au référentiel :
+- Accéder au dépot :
 ```shell
 cd docker_sae203
 ```
 
-- Construisez l'image décrite dans dockerfile avec docker build : 
+- Construisez l'image décrite dans Dockerfile avec docker build : 
 ```shell
 docker build -t <choisir-un-nom-pour-l'image> .
 ```
 
 - Pour lancer le serveur web :
 ```shell
-docker run -d -p 8080:80 <nom-de-l'image-choisie>
+docker run -d -p 443:443 <nom-de-l'image-choisie>
 ```
 
-- Vérifier que l'application est en cours d'exécution. Pour ce faire, ouvrez un navigateur et tapez dans la barre url : ```localhost:8080```
+- Vérifier que l'application est en cours d'exécution. Pour ce faire, ouvrez un navigateur et tapez dans la barre url : ```127.0.0.1:443```
 
 ## Instruction pour vérifier l´existence du conteneur et de l´image
 
@@ -41,7 +41,7 @@ docker run -d -p 8080:80 <nom-de-l'image-choisie>
 docker images
 ```
 
-- Pour vérifier que le conteneur est créé et activé :
+- Pour vérifier que le conteneur est créé et en cours de fonctionnement :
 ```shell
 docker ps
 ```
