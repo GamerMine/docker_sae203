@@ -24,8 +24,6 @@ RUN debconf-set-selections /root/automatic-jitsi-answers
 # On install jitsi
 RUN apt install -y jitsi-meet
 
-RUN printf "component_interface = '0.0.0.0'\ncomponent_ports = {5347}\nnetwork_backend = 'epoll'" >> /etc/prosody/prosody.cfg.lua
-
 # On expose les ports nécessaires pour l'ensembles des communications avec Jitsi
 EXPOSE 80
 EXPOSE 443
@@ -33,9 +31,11 @@ EXPOSE 10000
 
 # On copie la configuration NGINX pour le site web
 RUN rm /etc/nginx/sites-enabled/default
-COPY jitsi.conf /etc/nginx/sites-enabled/
+#COPY jitsi.conf /etc/nginx/sites-enabled/
 COPY startup.sh /root/
 
+# On donne les droits d'éxecution du fichier startup.sh
 RUN chmod +x /root/startup.sh
 
+# Le script startup.sh se lanceras a l'issue de la commande docker run
 CMD /root/startup.sh
