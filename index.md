@@ -6,7 +6,7 @@
 
 ### Docker 
   
-  ![logo de Docker](./img/logo_Docker.png)  
+  ![logo de Docker](./img/logo_docker.png)  
 
   Docker permet d'éxecuter des applications dans des conteneurs, voici un peu de vocabulaire :
   
@@ -25,7 +25,7 @@ Nous avons un **README** qui, une fois lu, permet d'adapter certains bout de fic
 
 Et nous avons un script **startup.sh** qui permet de démarrer les différents services de Jitsi ainsi que Nginx ( serveur web ).
 
-Nous nous intéresserons principalement au Dockerfile. Dans les premières commandes, nous prenons l'image Docker de Debian et nous mettons à jour le système, et installons les paquets nécessaires pour Jitsi.  
+Nous nous intéresserons principalement au **Dockerfile**. Dans les premières commandes, nous prenons l'image Docker de Debian et nous mettons à jour le système, et installons les paquets nécessaires pour Jitsi.  
 
 Ensuite nous ajoutons une dépendance de Jitsi, du nom de Prosody. Et en plus d'ajouter le dépôt contenant Prosody, on ajoute celui de Jitsi. Puis nous mettons à jour l'ensemble des dépôts du système.  
 
