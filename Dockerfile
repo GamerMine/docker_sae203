@@ -1,7 +1,7 @@
 # On se base sur l'image Docker de Debian
 FROM debian:latest
 
-# On met à jour Debian et installation des paquets nécessaires
+# On met à jour Debian et on installe les paquets nécessaires
 RUN apt update && \
     apt upgrade -y && \
     apt install -y gnupg2 nginx-full wget curl openjdk-11-jre apt-transport-https
@@ -25,13 +25,14 @@ RUN debconf-set-selections /root/automatic-jitsi-answers
 RUN apt install -y jitsi-meet
 
 # On expose les ports nécessaires pour l'ensembles des communications avec Jitsi
-EXPOSE 80
-EXPOSE 443
-EXPOSE 10000
+EXPOSE 80 	# Port pour NGINX
+EXPOSE 443	# Port pour NGINX
+EXPOSE 10000 	# Port pour Jitsi
 
-# On copie la configuration NGINX pour le site web
+# On supprime la configuration NGINX par défaut
 RUN rm /etc/nginx/sites-enabled/default
-#COPY jitsi.conf /etc/nginx/sites-enabled/
+
+# On copie le script startup.sh dans le dossier /root/
 COPY startup.sh /root/
 
 # On donne les droits d'éxecution du fichier startup.sh
