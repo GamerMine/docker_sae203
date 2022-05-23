@@ -29,6 +29,15 @@ cd docker_sae203
  ```
  ATTENTION : Les guillemets sont très importants !
 
+- Pour récupérer votre adresse ip, il vous faut écrire la commande :
+```shell
+ipconfig #pour windows
+```
+
+```shell
+ifconfig #pour linux
+```
+
 - Construisez l'image décrite dans Dockerfile avec docker build : 
 ```shell
 docker build -t <choisir-un-nom-pour-l'image> .
