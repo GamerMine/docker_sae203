@@ -46,18 +46,19 @@ docker build -t <choisir-un-nom-pour-l'image> .
 - Pour lancer le serveur web :
 ```shell
 docker run -d -p 443:443 <nom-de-l'image-choisie>
+ #optionnel : --name <nom-du-containeur>
 ```
 
 - Vérifier que l'application est en cours d'exécution. Pour ce faire, ouvrez un navigateur et tapez dans la barre url : ```https://<votre-ip>:443```
 
 ## Instruction pour vérifier l´existence du conteneur et de l´image
 
-- Pour vérifier que l´image a été créer, on affiche la liste des ilages avec :
+- Pour vérifier que l´image a été créée, on affiche la liste des images avec :
 ```shell
 docker images
 ```
 
-- Pour vérifier que le conteneur est créé et en cours de fonctionnement :
+- Pour vérifier que le conteneur a été créé et est en cours de fonctionnement :
 ```shell
 docker ps
 ```
@@ -70,11 +71,11 @@ docker ps -a
 ## Instruction pour supprimer le conteneur ou l´image
 #Pour supprimer une image, il faut supprimer tous les conteneurs qui la contiennent
 
-- Il faut d’abord taper dans le terminal pour arrêter le conteneur  :
+- Il faut d’abord marquer dans le terminal, pour arrêter le conteneur  :
 ```shell
 docker stop <nom-du-conteneur-choisie>
 ```
-- Et ensuite, pour supprimer le conteneur existant pour éviter de créer un conteneur différent à chaque lancement :
+- Et ensuite, pour supprimer le conteneur existant :
 ```
 docker rm <nom-du-conteneur-choisie>
 ```
