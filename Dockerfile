@@ -18,22 +18,22 @@ RUN echo 'deb [signed-by=/usr/share/keyrings/jitsi-keyring.gpg] https://download
 RUN apt update
 
 # On ajoute des réponses aux divers question posées lors de l'installation du paquet jitsi-meet et de ses dépendances
-COPY automatic-jitsi-answers /root/
+COPY ressources/automatic-jitsi-answers /root/
 RUN debconf-set-selections /root/automatic-jitsi-answers
 
 # On install jitsi
 RUN apt install -y jitsi-meet
 
 # On expose les ports nécessaires pour l'ensembles des communications avec Jitsi
-EXPOSE 80 	# Port pour NGINX
-EXPOSE 443	# Port pour NGINX
-EXPOSE 10000 	# Port pour Jitsi
+EXPOSE 80	
+EXPOSE 443
+EXPOSE 10000
 
 # On supprime la configuration NGINX par défaut
 RUN rm /etc/nginx/sites-enabled/default
 
 # On copie le script startup.sh dans le dossier /root/
-COPY startup.sh /root/
+COPY ressources/startup.sh /root/
 
 # On donne les droits d'éxecution du fichier startup.sh
 RUN chmod +x /root/startup.sh
